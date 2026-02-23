@@ -31,10 +31,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </div>
 
 <div class="nav-links">
-  <a href="#">Find Jobs</a>
+  <a href="JobCard.html" target="_blank">Find Jobs</a>
   <a href="#">Companies</a>
-  <a href="#">About</a>
-  <!-- <button class="post-btn">Post a Job</button> -->
+  <a href="#About-Us">About</a>
+  <button class="post-btn" onclick="openModal()">Post Job</button>
+  
 </div>
 
 </nav>
@@ -54,9 +55,9 @@ Filter by location, category, and experience level to find your perfect match.
 </p>
 
 <div class="hero-buttons">
-  <button class="primary-btn">
+  <button class="primary-btn" id="Explr-btn" onclick="exploreJob()">
     <i class="fa-solid fa-magnifying-glass"></i>
-    Explore Jobs
+    Explore Job
   </button>
 
   <button class="secondary-btn">
@@ -102,9 +103,156 @@ Filter by location, category, and experience level to find your perfect match.
 </div>
 </section>
 
+<!-- Latest Jobs -->
+<section class="jobs-section">
+
+  <h2 class="section-title">Latest Jobs</h2>
+
+  <div id="jobContainer" class="job-container"></div>
+
+</section>
+
+<!-- About Us Section -->
+<section class="about" id="About-Us">
+
+  <div class="about-container">
+
+    <div class="about-text">
+      <h2>About <span class="gradient-text">Xyz</span></h2>
+
+      <p>
+        JobBoard Pro is a modern job portal designed to connect talented
+        professionals with top companies around the world. Our mission is
+        to simplify job searching and hiring through a fast, secure,
+        and user-friendly platform.
+      </p>
+
+      <p>
+        Whether you are a job seeker looking for your dream career or an
+        employer searching for the perfect candidate, JobBoard Pro provides
+        powerful tools to make hiring smarter and faster.
+      </p>
+
+      <!-- <button class="primary-btn">Learn More</button> -->
+    </div>
+
+    <div class="about-features">
+
+      <div class="feature">
+        <i class="fa-solid fa-briefcase"></i>
+        <h4>Verified Jobs</h4>
+        <p>Only trusted companies and real opportunities.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fa-solid fa-user-check"></i>
+        <h4>Easy Apply</h4>
+        <p>Apply to jobs in just one click.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fa-solid fa-chart-line"></i>
+        <h4>Career Growth</h4>
+        <p>Opportunities that help you grow faster.</p>
+      </div>
+
+      <div class="feature">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+        <h4>Smart Job Matching</h4>
+        <p>Get personalized job recommendations based on your skills.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Contact Us  -->
+<section class="contact" id="contact">
+
+  <div class="contact-container">
+
+    <div class="contact-text">
+      <h2>Contact <span class="gradient-text">Us</span></h2>
+
+      
+
+      <!-- CONTACT DETAILS -->
+      <div class="contact-details">
+
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+91 6541112322">+91 6541112322</a>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="#">info@jobportal.com</a>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-globe"></i>
+          <a href="#">www.xyz.com</a>
+        </div>
+
+        
+      </div>
+
+      <!-- Icon Group -->
+      <div class="icon-group">
+          <p>
+        Connect with us through our social platforms and stay updated with new job opportunities.
+          </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+
+        <p class="quick-text">
+          For Quick Updates, Join our channels
+        </p>
+
+        <div class="message-icons">
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Job Modal -->
+<div class="modal" id="jobModal">
+
+  <div class="modal-content">
+    <h3>Post a Job</h3>
+
+    <input type="text" id="jobTitle" placeholder="Job Title">
+    <input type="text" id="companyName" placeholder="Company Name">
+    <input type="text" id="location" placeholder="Location">
+
+    <button onclick="addJob()">Add Job</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+
+</div>
+
+<!-- Footer -->
 <footer class="footer">
    &#169; 2026 Xyz | All Rights Reserved.
 </footer>
+
+<script src="home.js">
+
+</script>
 
 </body>
 </html>
