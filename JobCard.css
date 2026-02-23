@@ -1,3 +1,44 @@
+/* ================= ROOT VARIABLES ================= */
+
+:root{
+
+/* PRIMARY COLORS */
+--primary:#16a34a;
+--primary-dark:#15803d;
+--primary-light:#22c55e;
+
+/* BACKGROUNDS */
+--bg-main:#f3f9f5;
+--bg-card:#ffffff;
+--bg-chip:#ecfdf5;
+--bg-chip-hover:#d1fae5;
+
+/* TEXT COLORS */
+--text-main:#065f46;
+--text-secondary:#6b7280;
+--text-body:#374151;
+
+/* BORDERS */
+--border-soft:#d1fae5;
+--border-hover:#bbf7d0;
+
+/* GRADIENTS */
+--gradient-main:linear-gradient(135deg,#16a34a,#22c55e);
+--gradient-hover:linear-gradient(135deg,#15803d,#16a34a);
+--gradient-text:linear-gradient(90deg,#16a34a,#22c55e);
+
+/* SHADOWS */
+--shadow-card:0 8px 18px rgba(0,0,0,0.07);
+--shadow-hover:0 14px 28px rgba(34,197,94,0.15);
+--shadow-btn:0 10px 20px rgba(34,197,94,0.35);
+--shadow-floating:0 12px 28px rgba(34,197,94,0.45);
+
+/* TRANSITION */
+--transition:.3s ease;
+}
+
+/* ================= GLOBAL ================= */
+
 *{
 margin:0;
 padding:0;
@@ -6,7 +47,7 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f3f9f5;
+background:var(--bg-main);
 }
 
 /* ================= TITLE ================= */
@@ -17,9 +58,10 @@ margin:40px 0;
 font-size:38px;
 }
 
-/* GREEN GRADIENT TEXT */
+/* GRADIENT TEXT */
+
 .gradient-text{
-background:linear-gradient(90deg,#16a34a,#22c55e);
+background:var(--gradient-text);
 background-clip:text;
 -webkit-background-clip:text;
 color:transparent;
@@ -40,33 +82,32 @@ padding:20px;
 .filter-bar select{
 padding:12px;
 border-radius:10px;
-border:1px solid #d1fae5;
+border:1px solid var(--border-soft);
 min-width:180px;
 outline:none;
-transition:0.3s;
+transition:var(--transition);
 }
 
-/* GREEN FOCUS EFFECT */
 .filter-bar input:focus,
 .filter-bar select:focus{
-border-color:#22c55e;
+border-color:var(--primary-light);
 box-shadow:0 0 0 3px rgba(34,197,94,0.15);
 }
 
 /* RESET BUTTON */
 
 #resetBtn{
-background:#16a34a;
+background:var(--primary);
 color:white;
 border:none;
 padding:12px 20px;
 border-radius:10px;
 cursor:pointer;
-transition:0.3s;
+transition:var(--transition);
 }
 
 #resetBtn:hover{
-background:#15803d;
+background:var(--primary-dark);
 transform:translateY(-2px);
 }
 
@@ -82,10 +123,10 @@ gap:25px;
 /* ================= JOB CARD ================= */
 
 .job-card{
-background:white;
+background:var(--bg-card);
 border-radius:16px;
 padding:22px;
-box-shadow:0 8px 18px rgba(0,0,0,0.07);
+box-shadow:var(--shadow-card);
 transition:all .35s ease;
 display:flex;
 flex-direction:column;
@@ -93,12 +134,10 @@ gap:14px;
 border:1px solid transparent;
 }
 
-/* GREEN HOVER POLISH */
 .job-card:hover{
 transform:translateY(-8px);
-border-color:#bbf7d0;
-box-shadow:
-0 14px 28px rgba(34,197,94,0.15);
+border-color:var(--border-hover);
+box-shadow:var(--shadow-hover);
 }
 
 /* ================= HEADER ================= */
@@ -112,11 +151,11 @@ align-items:center;
 .job-title{
 font-size:20px;
 font-weight:600;
-color:#065f46;
+color:var(--text-main);
 }
 
 .company{
-color:#6b7280;
+color:var(--text-secondary);
 font-size:14px;
 }
 
@@ -125,31 +164,30 @@ font-size:14px;
 .job-info{
 display:flex;
 flex-wrap:wrap;
-gap:15px;
+gap:12px;
 font-size:14px;
-color:#374151;
+color:var(--text-body);
 }
 
 .job-info span{
 display:flex;
 align-items:center;
 gap:6px;
-background:#ecfdf5;
+background:var(--bg-chip);
 padding:6px 10px;
 border-radius:8px;
-transition:0.3s;
+transition:var(--transition);
 }
 
-/* GREEN CHIP HOVER */
 .job-info span:hover{
-background:#d1fae5;
+background:var(--bg-chip-hover);
 transform:scale(1.05);
 }
 
 /* ================= DESCRIPTION ================= */
 
 .job-desc{
-color:#6b7280;
+color:var(--text-secondary);
 font-size:14px;
 line-height:1.5;
 }
@@ -161,17 +199,16 @@ margin-top:auto;
 padding:10px;
 border:none;
 border-radius:10px;
-background:linear-gradient(135deg,#16a34a,#22c55e);
+background:var(--gradient-main);
 color:white;
 cursor:pointer;
-transition:all .3s ease;
+transition:var(--transition);
 }
 
-/* BUTTON HOVER */
 .view-btn:hover{
 transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(34,197,94,0.35);
-background:linear-gradient(135deg,#15803d,#16a34a);
+box-shadow:var(--shadow-btn);
+background:var(--gradient-hover);
 }
 
 /* ================= PAGINATION ================= */
@@ -188,22 +225,57 @@ margin-bottom:50px;
 padding:10px 18px;
 border:none;
 border-radius:8px;
-background:#16a34a;
+background:var(--primary);
 color:white;
 cursor:pointer;
-transition:0.3s;
+transition:var(--transition);
 }
 
 .pagination button:hover{
-background:#15803d;
+background:var(--primary-dark);
 transform:translateY(-2px);
 }
 
-/* Disabled Button */
 .pagination button:disabled{
 background:#9ca3af;
 cursor:not-allowed;
 transform:none;
+}
+
+/* ================= BACK HOME BUTTON ================= */
+
+.back-home-btn{
+position:fixed;
+top:20px;
+left:20px;
+z-index:9999;
+
+display:flex;
+align-items:center;
+gap:8px;
+
+padding:12px 18px;
+border-radius:50px;
+
+background:var(--gradient-main);
+color:white;
+text-decoration:none;
+font-weight:500;
+
+transition:var(--transition);
+}
+
+.back-home-btn:hover{
+transform:translateX(4px);
+box-shadow:var(--shadow-floating);
+}
+
+.back-home-btn i{
+transition:transform .3s ease;
+}
+
+.back-home-btn:hover i{
+transform:translateX(4px);
 }
 
 /* ================= RESPONSIVE ================= */
@@ -218,54 +290,11 @@ padding:20px;
 font-size:28px;
 }
 
-}
-
-/* ================= BACK HOME BUTTON ================= */
-
-.back-home-btn{
-position:fixed;
-top:20px;
-left:20px;
-z-index:999;
-
-display:flex;
-align-items:center;
-gap:8px;
-
-padding:10px 16px;
-border-radius:12px;
-
-background:linear-gradient(135deg,#16a34a,#22c55e);
-color:white;
-text-decoration:none;
-font-weight:500;
-
-/* box-shadow:0 8px 18px rgba(34,197,94,0.35); */
-transition:all .3s ease;
-}
-
-/* Hover Effect */
-/* .back-home-btn:hover{
-transform:translateX(-4px) translateY(-2px);
-background:linear-gradient(135deg,#15803d,#16a34a);
-box-shadow:0 12px 25px rgba(34,197,94,0.45);
-} */
-
-/* Arrow Animation */
-.back-home-btn i{
-transition:transform .3s ease;
-}
-
-.back-home-btn:hover i{
-transform:translateX(4px);
-}
-
-/* Mobile Adjustment */
-@media(max-width:768px){
 .back-home-btn{
 top:15px;
 left:15px;
 padding:8px 14px;
 font-size:14px;
 }
+
 }

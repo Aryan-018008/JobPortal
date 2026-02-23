@@ -58,5 +58,5 @@ function displayJobs(){
 document.getElementById("Explr-btn").addEventListener("click",exploreJob)
 
 function exploreJob(){
-  window.open("JobCard.html", "_blank");
+  window.open("JobCards.html", "_blank");
 }

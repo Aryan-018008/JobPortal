@@ -6,11 +6,14 @@ const baseJobs = [
 {
 title:"Frontend Developer",
 company:"Google",
-location:"Remote",
-category:"IT",
-experience:"Mid",
+location:"Remote",  //Remote/Other Location
+category:"IT",      // It or design or marketig
+experience:"Mid",   // Fresher or Mid or Senior
 salary:"₹8 LPA",
-desc:"Build modern UI using React and APIs."
+skill1:"React JS",
+skill2:"Angular JS",
+skill3:"Tailwind_CSS",
+desc:"Build modern UI."
 },
 {
 title:"UI Designer",
@@ -19,24 +22,92 @@ location:"Bangalore",
 category:"Design",
 experience:"Fresher",
 salary:"₹5 LPA",
+skill1:"Figma",
+skill2:"AdobeXD",
+skill3:"Prototyping",
 desc:"Design modern interfaces and prototypes."
 },
+
 {
 title:"Marketing Manager",
-company:"Amazon",
+company:"Crystal Ent.",
 location:"Delhi",
 category:"Marketing",
 experience:"Senior",
 salary:"₹12 LPA",
+skill1:"Communication",
+skill2:"Client Interaction",
+skill3:"SEO",
 desc:"Lead digital marketing campaigns."
 },
+{
+title:"Python Developer",
+company:"WebdX",
+location:"Bhubaneswar",
+category:"IT",
+experience:"Senior",
+salary:"₹12 LPA",
+skill1:"Python",
+skill2:"Flask",
+skill3:"APIs",
+desc:"Devlop with Python."
+},
+{
+title:"Backend Developer",
+company:"RobustY",
+location:"Noida",
+category:"IT",
+experience:"Senior",
+salary:"₹14 LPA",
+skill1:"Node JS",
+skill3:"MongoDB",
+skill2:"Express JS",
+desc:"Handle Serverside Error."
+},
+{
+title:"Graphic Design",
+company:"TwinDesign",
+location:"Chennai",
+category:"Design",
+experience:"Senior",
+salary:"₹9 LPA",
+skill3:"Figma",
+skill2:"Photoshop",
+skill1:"Typography",
+desc:"Design Brand,Logo"
+},
+{
+title:"Sales Executive",
+company:"we4u",
+location:"Remote",
+category:"Marketing",
+experience:"Mid",
+salary:"₹8 LPA",
+skill1:"Communication",
+skill2:"Client handling",
+skill3:"Data Analytics",
+desc:"Lead digital marketing campaigns."
+},
+{
+title:"Java Developer",
+company:"EaseSoft",
+location:"Kerala",
+category:"IT",
+experience:"Fresher",
+salary:"₹4 LPA",
+skill1:"Java(core)",
+skill2:"JWT",
+skill3:"API Development",
+desc:"Lead digital marketing campaigns."
+},
+
 ];
 
 /* Demo data for pagination */
 const jobs = [];
 let idCounter = 1;
 
-for(let i=0;i<5;i++){
+for(let i=0;i<1;i++){
   baseJobs.forEach(job=>{
     jobs.push({
       id: idCounter++,   // ✅ unique id
@@ -55,9 +126,7 @@ const container = document.getElementById("jobContainer");
 // const perPage = 6;
 let filteredJobs = [...jobs];
 
-/* ===============================
-   RENDER JOBS
-================================*/
+/* Render Jobs */
 
 function renderJobs(){
 
@@ -89,6 +158,9 @@ function renderJobs(){
         <span><i class="fa-solid fa-briefcase"></i> ${job.category}</span>
         <span><i class="fa-solid fa-user"></i> ${job.experience}</span>
         <span><i class="fa-solid fa-indian-rupee-sign"></i> ${job.salary}</span>
+        <span><i class="fa-solid fa-screwdriver-wrench"></i> ${job.skill1}</span>
+        <span><i class="fa-solid fa-screwdriver-wrench"></i> ${job.skill2}</span>
+        <span><i class="fa-solid fa-screwdriver-wrench"></i> ${job.skill3}</span>
       </div>
 
       <p class="job-desc">${job.desc}</p>
@@ -217,3 +289,12 @@ document.getElementById("experienceFilter")
 ================================*/
 
 renderJobs();
+
+//  Cross-Button
+// document.addEventListener("click", function(e){
+
+//   if(e.target.closest(".close-btn")){
+//       e.target.closest(".job-card").remove();
+//   }
+
+// });
