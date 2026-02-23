@@ -69,6 +69,16 @@ color:transparent;
 }
 
 /* ================= FILTER BAR ================= */
+/* ================= LOGO TEXT ================= */
+
+/* ================= LOGO TEXT ================= */
+
+/* .logo-text{
+font-size:26px;
+font-weight:700;
+letter-spacing:0.5px;
+color:var(--text-main);
+} */
 
 .filter-bar{
 display:flex;
@@ -83,7 +93,7 @@ padding:20px;
 padding:12px;
 border-radius:10px;
 border:1px solid var(--border-soft);
-min-width:180px;
+min-width:310px;
 outline:none;
 transition:var(--transition);
 }
@@ -245,28 +255,26 @@ transform:none;
 /* ================= BACK HOME BUTTON ================= */
 
 .back-home-btn{
-position:fixed;
-top:20px;
-left:20px;
-z-index:9999;
-
-display:flex;
+display:inline-flex;
 align-items:center;
 gap:8px;
-
-padding:12px 18px;
+padding:12px 22px;
 border-radius:50px;
-
 background:var(--gradient-main);
 color:white;
 text-decoration:none;
 font-weight:500;
-
 transition:var(--transition);
 }
 
+.home-btn-wrapper{
+display:flex;
+justify-content:center;
+margin:40px 0 60px;
+}
+
 .back-home-btn:hover{
-transform:translateX(4px);
+transform:translateY(-3px);
 box-shadow:var(--shadow-floating);
 }
 
@@ -275,7 +283,7 @@ transition:transform .3s ease;
 }
 
 .back-home-btn:hover i{
-transform:translateX(4px);
+transform:translateX(-4px);
 }
 
 /* ================= RESPONSIVE ================= */
@@ -297,4 +305,53 @@ padding:8px 14px;
 font-size:14px;
 }
 
+}
+
+
+
+/* ================= REDIRECT MODAL ================= */
+
+.redirect-modal{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transition:0.3s ease;
+    z-index:9999;
+}
+
+.redirect-modal.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.redirect-box{
+    background:#fff;
+    padding:30px 40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    font-weight:600;
+}
+
+/* Spinner */
+.spinner{
+    width:40px;
+    height:40px;
+    border:4px solid #e5e7eb;
+    border-top:4px solid #2563eb;
+    border-radius:50%;
+    margin:0 auto 15px;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{ transform:rotate(360deg); }
 }

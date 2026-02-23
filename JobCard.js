@@ -1,6 +1,4 @@
-/* ===============================
-   JOB DATA
-================================*/
+/* -- Job Data--*/
 
 const baseJobs = [
 {
@@ -50,7 +48,7 @@ salary:"₹12 LPA",
 skill1:"Python",
 skill2:"Flask",
 skill3:"APIs",
-desc:"Devlop with Python."
+desc:"Python Application Development."
 },
 {
 title:"Backend Developer",
@@ -62,7 +60,7 @@ salary:"₹14 LPA",
 skill1:"Node JS",
 skill3:"MongoDB",
 skill2:"Express JS",
-desc:"Handle Serverside Error."
+desc:"Server-Side Error Handling"
 },
 {
 title:"Graphic Design",
@@ -74,7 +72,7 @@ salary:"₹9 LPA",
 skill3:"Figma",
 skill2:"Photoshop",
 skill1:"Typography",
-desc:"Design Brand,Logo"
+desc:"Brand Identity and Logo Design"
 },
 {
 title:"Sales Executive",
@@ -98,7 +96,7 @@ salary:"₹4 LPA",
 skill1:"Java(core)",
 skill2:"JWT",
 skill3:"API Development",
-desc:"Lead digital marketing campaigns."
+desc:"Enterprise Java Solutions"
 },
 
 ];
@@ -110,20 +108,17 @@ let idCounter = 1;
 for(let i=0;i<1;i++){
   baseJobs.forEach(job=>{
     jobs.push({
-      id: idCounter++,   // ✅ unique id
+      id: idCounter++,   
       ...job
     });
   });
 }
 
-/* ===============================
-   GLOBAL VARIABLES
-================================*/
+/* Global Variables*/
 
 const container = document.getElementById("jobContainer");
 
-// let currentPage = 1;
-// const perPage = 6;
+
 let filteredJobs = [...jobs];
 
 /* Render Jobs */
@@ -165,47 +160,40 @@ function renderJobs(){
 
       <p class="job-desc">${job.desc}</p>
 
-      <button class="view-btn">Apply Now</button>
+      <button class="view-btn">Save</button>
     `;
+    const saveBtn = card.querySelector(".view-btn");
+
+  saveBtn.addEventListener("click", () => {
+
+      let savedJobs =
+        JSON.parse(localStorage.getItem("savedJobs")) || [];
+
+      // avoid duplicate save
+      const exists = savedJobs.some(j =>
+        j.title === job.title &&
+        j.company === job.company
+      );
+
+      if (exists) {
+        alert("Job already saved!");
+        return;
+      }
+
+      savedJobs.push(job);
+
+      localStorage.setItem(
+        "savedJobs",
+        JSON.stringify(savedJobs)
+      );
+
+      alert("Job saved successfully!");
+  });
 
     container.appendChild(card);
   });
 }
-/* ===============================
-   PAGINATION
-================================*/
 
-// function updatePagination(){
-
-//   const totalPages =
-//     Math.max(1, Math.ceil(filteredJobs.length / perPage));
-
-//   document.getElementById("pageInfo").textContent =
-//     `Page ${currentPage} / ${totalPages}`;
-
-//   document.getElementById("prevBtn").disabled =
-//     currentPage === 1;
-
-//   document.getElementById("nextBtn").disabled =
-//     currentPage === totalPages;
-// }
-
-// document.getElementById("prevBtn").onclick = () => {
-//   if(currentPage > 1){
-//     currentPage--;
-//     renderJobs();
-//   }
-// };
-
-// document.getElementById("nextBtn").onclick = () => {
-//   const totalPages =
-//     Math.ceil(filteredJobs.length / perPage);
-
-//   if(currentPage < totalPages){
-//     currentPage++;
-//     renderJobs();
-//   }
-// };
 
 /* ===============================
    FILTERING
@@ -290,11 +278,19 @@ document.getElementById("experienceFilter")
 
 renderJobs();
 
-//  Cross-Button
-// document.addEventListener("click", function(e){
+//HomePage Redirection
+// Redirect Modal Logic
+const homeBtn = document.querySelector(".back-home-btn");
+const redirectModal = document.getElementById("redirectModal");
 
-//   if(e.target.closest(".close-btn")){
-//       e.target.closest(".job-card").remove();
-//   }
+homeBtn.addEventListener("click", function(e){
+    e.preventDefault(); 
 
-// });
+    // pop-up
+    redirectModal.classList.add("active");
+
+    
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1500); 
+});

@@ -11,8 +11,15 @@
 
 <body>
     <section class="jobs-page">
-        <h1 class="page-title"> Explore <span class="gradient-text">Opportunities</span> </h1> <!-- Filter Bar -->
-        <div class="filter-bar"> <input type="text" id="searchInput" placeholder="Search job title..."> <select
+        <h1 class="page-title"> Explore <span class="gradient-text">Opportunities</span> </h1> 
+        <!-- Filter Bar -->
+        <div class="filter-bar"> 
+          <!-- <p class="logo-text">
+              Job <span class="gradient-text">NEXT</span>
+          </p> -->
+
+          <input type="text" id="searchInput" placeholder="Search job title..."> 
+          <select
                 id="locationFilter">
                 <option value="">Location</option>
                 <option>Remote</option>
@@ -21,20 +28,40 @@
                 <option>Bhubaneswar</option>
                 <option>Kerala</option>
                 <option>Delhi</option>
-            </select> <select id="categoryFilter">
+            </select> 
+            
+            <select id="categoryFilter">
                 <option value="">Category</option>
                 <option>IT</option>
                 <option>Design</option>
                 <option>Marketing</option>
-            </select> <select id="experienceFilter">
+            </select>
+            
+            <select id="experienceFilter">
                 <option value="">Experience</option>
                 <option>Fresher</option>
                 <option>Mid</option>
                 <option>Senior</option>
-            </select> <button id="resetBtn">Reset</button> </div> <!-- ================= JOB CARDS ================= -->
-        <div id="jobContainer" class="job-container"></div> <!-- ================= PAGINATION ================= -->
-        <!-- <div class="pagination"> <button id="prevBtn">Prev</button> <span id="pageInfo"></span> <button id="nextBtn">Next</button> </div> -->
-    </section> <a href="index.html" class="back-home-btn"><i class="fa-solid fa-arrow-left"></i></i>Home</a>
+            </select>
+             <button id="resetBtn">Reset</button> 
+            </div> 
+            <!-- ================= JOB CARDS ================= -->
+        <div id="jobContainer" class="job-container"></div> 
+        
+        <div class="home-btn-wrapper">
+        <a href="index.html" class="back-home-btn">
+            <i class="fa-solid fa-arrow-left"></i> Home
+        </a>
+    </div>
+    </section>
+    
+    <div id="redirectModal" class="redirect-modal">
+    <div class="redirect-box">
+        <div class="spinner"></div>
+        <p>Redirecting to HomePage...</p>
+    </div>
+</div>
+    
     <script src="JobCard.js"></script>
 </body>
 
