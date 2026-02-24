@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
+<title>HomePage-JobNEXT</title>
 
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,9 +32,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="nav-links">
   <a href="JobCard.html" target="_blank">Find Jobs</a>
-  <a href="#">Companies</a>
+  <a href="#contact">Contact</a>
+  <a href="#" id="companiesBtn">Companies</a>
   <a href="#About-Us">About</a>
-  <!-- <button class="post-btn" onclick="openModal()">Post Job</button> -->
+  
   
 </div>
 
@@ -60,57 +61,10 @@ Filter by location, category, and experience level to find your perfect match.
     Explore Job
   </button>
 
-  <!-- <button class="secondary-btn">
-    Learn More
-  </button> -->
 </div>
 
 </section>
 
-<!-- Statictics -->
-<section class="stats">
-
-<div class="card">
-  <div class="icon-box purple">
-    <i class="fa-solid fa-briefcase"></i>
-  </div>
-  <h2>0</h2>
-  <p>Active Jobs</p>
-</div>
-
-<div class="card">
-  <div class="icon-box pink">
-    <i class="fa-solid fa-building"></i>
-  </div>
-  <h2>0</h2>
-  <p>Companies</p>
-</div>
-
-<div class="card">
-  <div class="icon-box red">
-    <i class="fa-solid fa-users"></i>
-  </div>
-  <h2>0</h2>
-  <p>Job Seekers</p>
-</div>
-
-<div class="card">
-  <div class="icon-box orange">
-    <i class="fa-solid fa-star"></i>
-  </div>
-  <h2>0 %</h2>
-  <p>Success Rate</p>
-</div>
-</section>
-
-<!-- Latest Jobs -->
-<section class="jobs-section">
-
-  <h2 class="section-title">Latest Hirings</h2>
-
-  <div id="jobContainer" class="job-container"></div>
-
-</section>
 
 <!-- About Us Section -->
 <section class="about" id="About-Us">
@@ -121,7 +75,7 @@ Filter by location, category, and experience level to find your perfect match.
       <h2>About <span class="gradient-text">JobNEXT</span></h2>
 
       <p>
-        JobBoard Pro is a modern job portal designed to connect talented
+        JobNEXT is a modern job portal designed to connect talented
         professionals with top companies around the world. Our mission is
         to simplify job searching and hiring through a fast, secure,
         and user-friendly platform.
@@ -129,11 +83,11 @@ Filter by location, category, and experience level to find your perfect match.
 
       <p>
         Whether you are a job seeker looking for your dream career or an
-        employer searching for the perfect candidate, JobBoard Pro provides
+        employer searching for the perfect candidate, JobNEXT provides
         powerful tools to make hiring smarter and faster.
       </p>
 
-      <!-- <button class="primary-btn">Learn More</button> -->
+      
     </div>
 
     <div class="about-features">
@@ -179,7 +133,7 @@ Filter by location, category, and experience level to find your perfect match.
 
       
 
-      <!-- CONTACT DETAILS -->
+      <!-- Official -->
       <div class="contact-details">
 
         <div class="contact-item">
@@ -205,6 +159,7 @@ Filter by location, category, and experience level to find your perfect match.
           <p>
         Connect with us through our social platforms and stay updated with new job opportunities.
           </p>
+          <!-- Social Media -->
           <div class="social-icons">
           <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -228,6 +183,20 @@ Filter by location, category, and experience level to find your perfect match.
   </div>
 
 </section>
+
+<!-- Company-List -->
+
+<div id="companyModal" class="company-modal">
+  <div class="company-box">
+
+    <span class="close-company">&times;</span>
+
+    <h2>Hiring Companies</h2>
+
+    <div id="companyList"></div>
+
+  </div>
+</div>
 
 
 <!-- Footer -->

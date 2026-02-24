@@ -1,5 +1,9 @@
-/* -- Job Data--*/
+const sortFilter = document.getElementById("sortFilter");
+let allJobs = JSON.parse(localStorage.getItem("jobs")) || [];
 
+
+
+/* -- Job Data--*/
 const baseJobs = [
 {
 title:"Frontend Developer",
@@ -124,6 +128,16 @@ let filteredJobs = [...jobs];
 /* Render Jobs */
 
 function renderJobs(){
+  let jobsToShow = [...filteredJobs];
+
+
+      if (sortFilter && sortFilter.value === "latest") {
+  jobsToShow.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+     }
+
+      if (sortFilter && sortFilter.value === "oldest") {
+  jobsToShow.sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0));
+}
 
   container.innerHTML = "";
 
@@ -133,7 +147,7 @@ function renderJobs(){
     return;
   }
 
-  filteredJobs.forEach(job => {
+  jobsToShow.forEach(job => {
 
     const card = document.createElement("div");
     card.className = "job-card";
@@ -187,7 +201,7 @@ function renderJobs(){
         JSON.stringify(savedJobs)
       );
 
-      alert("Job saved successfully!");
+     alert(" ✅Job saved successfully!");
   });
 
     container.appendChild(card);
@@ -195,9 +209,7 @@ function renderJobs(){
 }
 
 
-/* ===============================
-   FILTERING
-================================*/
+/* Filter */
 
 function applyFilters(){
 
@@ -222,7 +234,7 @@ function applyFilters(){
     (!exp || job.experience === exp)
   );
 
-  /* ✅ REMOVE VISUAL DUPLICATES */
+ 
   const seen = new Set();
 
   filteredJobs = results.filter(job => {
@@ -272,14 +284,14 @@ document.getElementById("categoryFilter")
 document.getElementById("experienceFilter")
   .addEventListener("change", applyFilters);
 
-/* ===============================
-   INITIAL LOAD
-================================*/
+/* Initial Render */
+if(sortFilter){
+  sortFilter.addEventListener("change", renderJobs);
+}
 
 renderJobs();
 
 //HomePage Redirection
-// Redirect Modal Logic
 const homeBtn = document.querySelector(".back-home-btn");
 const redirectModal = document.getElementById("redirectModal");
 
@@ -292,5 +304,9 @@ homeBtn.addEventListener("click", function(e){
     
     setTimeout(() => {
         window.location.href = "index.html";
-    }, 1500); 
+    }, 800); 
 });
+
+if(!localStorage.getItem("jobs")){
+    localStorage.setItem("jobs","[]");
+}

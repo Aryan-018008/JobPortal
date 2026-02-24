@@ -4,49 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobs</title>
+    <title>JobCards-JobNEXT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="JobCard.css">
 </head>
 
 <body>
     <section class="jobs-page">
-        <h1 class="page-title"> Explore <span class="gradient-text">Opportunities</span> </h1> 
+        
+        <p id="jobCount" class="job-count"></p>
         <!-- Filter Bar -->
-        <div class="filter-bar"> 
-          <!-- <p class="logo-text">
-              Job <span class="gradient-text">NEXT</span>
-          </p> -->
+        <div class="filter-bar">
+    <div class="filter-controls">
 
-          <input type="text" id="searchInput" placeholder="Search job title..."> 
-          <select
-                id="locationFilter">
-                <option value="">Location</option>
-                <option>Remote</option>
-                <option>Bangalore</option>
-                <option>Delhi</option>
-                <option>Bhubaneswar</option>
-                <option>Kerala</option>
-                <option>Delhi</option>
-            </select> 
-            
-            <select id="categoryFilter">
-                <option value="">Category</option>
-                <option>IT</option>
-                <option>Design</option>
-                <option>Marketing</option>
-            </select>
-            
-            <select id="experienceFilter">
-                <option value="">Experience</option>
-                <option>Fresher</option>
-                <option>Mid</option>
-                <option>Senior</option>
-            </select>
-             <button id="resetBtn">Reset</button> 
-            </div> 
-            <!-- ================= JOB CARDS ================= -->
-        <div id="jobContainer" class="job-container"></div> 
+        <!-- BRAND -->
+        <div class="filter-brand">
+            <i class="fa-solid fa-briefcase"></i>
+            <span class="logo-text" style="color: #2563eb;">JobNEXT</span>
+        </div>
+
+        <!-- SEARCH -->
+        <input type="text" id="searchInput" placeholder="Search job title...">
+
+        <!-- FILTERS -->
+        <select id="locationFilter">
+            <option value="">Location</option>
+            <option>Remote</option>
+            <option>Bangalore</option>
+            <option>Delhi</option>
+            <option>Bhubaneswar</option>
+            <option>Kerala</option>
+        </select>
+
+        <select id="categoryFilter">
+            <option value="">Category</option>
+            <option>IT</option>
+            <option>Design</option>
+            <option>Marketing</option>
+        </select>
+
+        <select id="experienceFilter">
+            <option value="">Experience</option>
+            <option>Fresher</option>
+            <option>Mid</option>
+            <option>Senior</option>
+        </select>
+
+        <button id="resetBtn">Reset</button>
+
+    </div>
+</div>
+            <!-- Job Cards -->
+        
+
+            <div id="jobContainer" class="job-container"></div> 
         
         <div class="home-btn-wrapper">
         <a href="index.html" class="back-home-btn">

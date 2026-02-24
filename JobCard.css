@@ -2,41 +2,37 @@
 
 :root{
 
-/* PRIMARY COLORS */
---primary:#16a34a;
---primary-dark:#15803d;
---primary-light:#22c55e;
+  /* Primary */
+  --primary:#2563eb;
+  --primary-dark:#1d4ed8;
+  --primary-light:#60a5fa;
 
-/* BACKGROUNDS */
---bg-main:#f3f9f5;
---bg-card:#ffffff;
---bg-chip:#ecfdf5;
---bg-chip-hover:#d1fae5;
+  /* Gradients */
+  --gradient-main:linear-gradient(135deg,#2563eb,#06b6d4);
+  --gradient-hover:linear-gradient(135deg,#1d4ed8,#2563eb);
+  --gradient-text:linear-gradient(90deg,#2563eb,#38bdf8);
 
-/* TEXT COLORS */
---text-main:#065f46;
---text-secondary:#6b7280;
---text-body:#374151;
+  /* Backgrounds */
+  --bg-main:#f4f7fb;
+  --bg-card:#ffffff;
+  --bg-soft:#eef4ff;
 
-/* BORDERS */
---border-soft:#d1fae5;
---border-hover:#bbf7d0;
+  /* Text */
+  --text-main:#0f172a;
+  --text-muted:#64748b;
 
-/* GRADIENTS */
---gradient-main:linear-gradient(135deg,#16a34a,#22c55e);
---gradient-hover:linear-gradient(135deg,#15803d,#16a34a);
---gradient-text:linear-gradient(90deg,#16a34a,#22c55e);
+  /* Borders */
+  --border-soft:#e2e8f0;
+  --border-hover:#bfdbfe;
 
-/* SHADOWS */
---shadow-card:0 8px 18px rgba(0,0,0,0.07);
---shadow-hover:0 14px 28px rgba(34,197,94,0.15);
---shadow-btn:0 10px 20px rgba(34,197,94,0.35);
---shadow-floating:0 12px 28px rgba(34,197,94,0.45);
+  /* Shadows */
+  --shadow-soft:0 6px 18px rgba(37,99,235,0.12);
+  --shadow-hover:0 12px 28px rgba(37,99,235,0.18);
+  --shadow-btn:0 8px 20px rgba(37,99,235,0.25);
 
-/* TRANSITION */
---transition:.3s ease;
+  /* Transition */
+  --transition:.3s ease;
 }
-
 /* ================= GLOBAL ================= */
 
 *{
@@ -50,7 +46,7 @@ body{
 background:var(--bg-main);
 }
 
-/* ================= TITLE ================= */
+/* Title  */
 
 .page-title{
 text-align:center;
@@ -58,7 +54,7 @@ margin:40px 0;
 font-size:38px;
 }
 
-/* GRADIENT TEXT */
+/* Gradient Text */
 
 .gradient-text{
 background:var(--gradient-text);
@@ -68,34 +64,76 @@ color:transparent;
 -webkit-text-fill-color:transparent;
 }
 
-/* ================= FILTER BAR ================= */
-/* ================= LOGO TEXT ================= */
 
-/* ================= LOGO TEXT ================= */
+/* Logo Text  */
 
-/* .logo-text{
+.logo-text{
 font-size:26px;
 font-weight:700;
 letter-spacing:0.5px;
 color:var(--text-main);
-} */
+}
 
 .filter-bar{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-justify-content:center;
-padding:20px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  height: 80px;                 
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid var(--border-soft);
+  padding: 0 30px;
+}
+
+ .filter-controls{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+.filter-brand{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #2563eb;
+
+  margin-right: 30px;  
+  flex-shrink: 0;
+}
+
+.filter-brand i{
+  font-size: 22px;
 }
 
 .filter-bar input,
 .filter-bar select{
-padding:12px;
-border-radius:10px;
-border:1px solid var(--border-soft);
-min-width:310px;
-outline:none;
-transition:var(--transition);
+  height: 42px;          
+  padding: 0 12px;
+
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+
+  outline: none;
+  transition: var(--transition);
+}
+
+#searchInput{
+  flex: 1;
+  max-width: 400px;
 }
 
 .filter-bar input:focus,
@@ -104,7 +142,7 @@ border-color:var(--primary-light);
 box-shadow:0 0 0 3px rgba(34,197,94,0.15);
 }
 
-/* RESET BUTTON */
+/* Reset Button */
 
 #resetBtn{
 background:var(--primary);
@@ -114,6 +152,7 @@ padding:12px 20px;
 border-radius:10px;
 cursor:pointer;
 transition:var(--transition);
+height: 42px;
 }
 
 #resetBtn:hover{
@@ -121,7 +160,7 @@ background:var(--primary-dark);
 transform:translateY(-2px);
 }
 
-/* ================= JOB GRID ================= */
+/*  Job Grid  */
 
 .job-container{
 padding:40px 60px;
@@ -130,13 +169,13 @@ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
 }
 
-/* ================= JOB CARD ================= */
+/*  Job Card */
 
 .job-card{
 background:var(--bg-card);
 border-radius:16px;
 padding:22px;
-box-shadow:var(--shadow-card);
+box-shadow:var(--shadow-soft);
 transition:all .35s ease;
 display:flex;
 flex-direction:column;
@@ -150,7 +189,7 @@ border-color:var(--border-hover);
 box-shadow:var(--shadow-hover);
 }
 
-/* ================= HEADER ================= */
+/*  Header  */
 
 .job-header{
 display:flex;
@@ -165,11 +204,11 @@ color:var(--text-main);
 }
 
 .company{
-color:var(--text-secondary);
+color:var(--text-muted);
 font-size:14px;
 }
 
-/* ================= INFO ROW ================= */
+/*  Info Row  */
 
 .job-info{
 display:flex;
@@ -183,7 +222,7 @@ color:var(--text-body);
 display:flex;
 align-items:center;
 gap:6px;
-background:var(--bg-chip);
+background:var(--bg-soft);
 padding:6px 10px;
 border-radius:8px;
 transition:var(--transition);
@@ -194,15 +233,15 @@ background:var(--bg-chip-hover);
 transform:scale(1.05);
 }
 
-/* ================= DESCRIPTION ================= */
+/*  Desc */
 
 .job-desc{
-color:var(--text-secondary);
+color:var(--text-muted);
 font-size:14px;
 line-height:1.5;
 }
 
-/* ================= BUTTON ================= */
+/*  Button  */
 
 .view-btn{
 margin-top:auto;
@@ -221,38 +260,9 @@ box-shadow:var(--shadow-btn);
 background:var(--gradient-hover);
 }
 
-/* ================= PAGINATION ================= */
 
-.pagination{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:20px;
-margin-bottom:50px;
-}
 
-.pagination button{
-padding:10px 18px;
-border:none;
-border-radius:8px;
-background:var(--primary);
-color:white;
-cursor:pointer;
-transition:var(--transition);
-}
-
-.pagination button:hover{
-background:var(--primary-dark);
-transform:translateY(-2px);
-}
-
-.pagination button:disabled{
-background:#9ca3af;
-cursor:not-allowed;
-transform:none;
-}
-
-/* ================= BACK HOME BUTTON ================= */
+/*  Back Button */
 
 .back-home-btn{
 display:inline-flex;
@@ -286,7 +296,7 @@ transition:transform .3s ease;
 transform:translateX(-4px);
 }
 
-/* ================= RESPONSIVE ================= */
+/*  Responsive */
 
 @media(max-width:768px){
 
@@ -309,7 +319,7 @@ font-size:14px;
 
 
 
-/* ================= REDIRECT MODAL ================= */
+/*  Modal Redirect  */
 
 .redirect-modal{
     position: fixed;
